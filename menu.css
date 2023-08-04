@@ -1,0 +1,64 @@
+#youtube {
+    width: 10cm;
+    height: 4cm;
+    background-color: #000;
+    cursor: pointer;
+    position: absolute;
+    left: 37.5%;
+    transition: all 0.5s;
+    transform: scale(1)
+}
+#youtube:hover {
+    width: 10.1cm;
+    height: 4.1cm;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+    transform: scale(1.01)
+}
+#rickrollsimbutton {
+    width: 24.5vw;
+    height: 9.8vw;
+    background-color: #000;
+    cursor: pointer;
+    position: absolute;
+    left: 37.5%;
+    transition: all 0.5s;
+    transform: scale(1)
+}
+#rickrollsimbutton:hover {
+    width: 25vw;
+    height: 10vw;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+    transform: scale(1.01)
+}
+#dimensionbutton {
+    width: 24.5vw;
+    height: 9.8vw;
+    background-color: #000;
+    cursor: pointer;
+    position: absolute;
+    left: 10%;
+    transition: all 0.5s;
+    transform: scale(1)
+}
+#dimensionbutton:hover {
+    width: 25vw;
+    height: 10vw;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+    transform: scale(1.01)
+}
+#listmakerbutton {
+    width: 24.5vw;
+    height: 9.8vw;
+    background-color: #000;
+    cursor: pointer;
+    position: absolute;
+    left: 65%;
+    transition: all 0.5s;
+    transform: scale(1)
+}
+#listmakerbutton:hover {
+    width: 25vw;
+    height: 10vw;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+    transform: scale(1.01)
+}

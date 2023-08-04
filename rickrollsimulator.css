@@ -1,0 +1,112 @@
+#backbutton {
+    width: 150px;
+    height: 50px;
+    background-color: #000;
+    border: none;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+#backbutton:hover {
+    width: 155px;
+    height: 55px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+}
+#itsarickroll {
+    width: 150px;
+    height: 50px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+#itsarickroll:hover {
+    width: 155px;
+    height: 55px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+}
+#startpopup {
+font-family: 'Courier New', Courier, monospace;
+}
+#closepopup {
+font-family:monospace
+}
+#rickrollpopup {
+width: 80%;
+height: 80%;
+}
+#rickroll {
+width: 80%;
+height: 80%;
+position: absolute;
+top:10%;
+left:10%;
+}
+#rickrollstop {
+position: absolute;
+top:92%;
+left:42%;
+width:200px;
+height: 50px;
+font-size: 25px;
+font-family:monospace;
+border:none;
+background-color:aqua;
+cursor: -webkit-grab;
+}
+#rickrollstop:hover {
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+}
+#rickrollpopup2 {
+width: 80%;
+height: 80%;
+}
+#rickroll2 {
+width: 80%;
+height: 80%;
+position: absolute;
+top:10%;
+left:10%;
+}
+#rickrollstop2 {
+position: absolute;
+top:92%;
+left:42%;
+width:200px;
+height: 50px;
+font-size: 25px;
+font-family:monospace;
+border:none;
+background-color:aqua;
+cursor: -webkit-grab;
+}
+#rickrollstop2:hover {
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+}
+#rickrollpopup3 {
+  width: 80%;
+  height: 80%;
+}
+#notrickrollpopup {
+  width: 80%;
+  height: 80%;
+}
+#subscribepopup {
+    color: rgb(255, 0, 0);
+    animation: color-shift 5s infinite linear;
+  }
+  @keyframes color-shift {
+    0% {
+      color: rgb(255, 0, 0);
+    }
+    25% {
+      color: rgb(0, 255, 0);
+    }
+    50% {
+      color: rgb(0, 0, 255);
+    }
+    75% {
+      color: rgb(255, 0, 255);
+    }
+    100% {
+      color: rgb(255, 0, 0);
+    }
+  }
