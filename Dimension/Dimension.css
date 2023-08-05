@@ -1,0 +1,34 @@
+#restart {
+    width: 50vw;
+    height: 10vw;
+    cursor: pointer;
+    position: absolute;
+    left: 25%;
+    top:20%;
+    transition: all 0.5s;
+    transform: scale(1)
+}
+#restart:hover {
+    width: 51vw;
+    height: 11vw;
+    color: aqua;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+    transform: scale(1.01)
+}
+#back {
+    width: 50vw;
+    height: 10vw;
+    cursor: pointer;
+    position: absolute;
+    left: 25%;
+    top:50%;
+    transition: all 0.5s;
+    transform: scale(1)
+}
+#back:hover {
+    width: 51vw;
+    height: 11vw;
+    color: aqua;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+    transform: scale(1.01)
+}
