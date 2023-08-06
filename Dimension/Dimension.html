@@ -9,9 +9,15 @@
 </head>
 <body>
 
-  <p id="score" style="font-size: 5vw;position: absolute;">Score: null</p>
+  <p id="score" style="font-size: 5vw;position: absolute;font-family: monospace;letter-spacing: 0;">Score: null</p>
 
   <dialog id="deathscreen" style="background: none;border: none;height: 100%;width:100%;text-align: center;">
+    <button id="restart" style="background: none;border: none;font-size: 10vw;outline: none;" onclick="location.reload()">Restart</button>
+    <button id="back" style="background: none;border: none;font-size: 10vw;outline: none;" onclick="location.href='/menu.html'">Back</button>
+  </dialog>
+
+  <dialog id="winscreen" style="background: none;border: none;height: 100%;width:100%;text-align: center;">
+    <p style="font-size: 10vw;color: lime;margin-top: 0;">You win!</p>
     <button id="restart" style="background: none;border: none;font-size: 10vw;outline: none;" onclick="location.reload()">Restart</button>
     <button id="back" style="background: none;border: none;font-size: 10vw;outline: none;" onclick="location.href='/menu.html'">Back</button>
   </dialog>
@@ -121,7 +127,7 @@
     renderer.domElement.requestPointerLock();
     }
   };
-  
+    
     const renderer = new THREE.WebGLRenderer({
       alpha: true,
       antialias: true
@@ -155,7 +161,7 @@
           new THREE.BoxGeometry(width, height, depth),
           new THREE.MeshStandardMaterial({ color })
         )
-  
+
         this.width = width
         this.height = height
         this.depth = depth
@@ -263,6 +269,60 @@
       }
     })
     scene.add(deathbox)
+    const finish1 = new Box({
+      width: 10,
+      height: 0.5,
+      depth: 1,
+      color: 'lime',
+      position: {
+        x: 0,
+        y: -2,
+        z: -25.5
+      }
+    })
+    finish1.castShadow = true
+
+    scene.add(finish1)
+    const finish2 = new Box({
+      width: 0.4,
+      height: 10,
+      depth: 0.4,
+      color: 'brown',
+      position: {
+        x: 4.5,
+        y: -2,
+        z: -25.5
+      }
+    })
+    finish2.castShadow = true
+    
+    scene.add(finish2)
+    const finish3 = new Box({
+      width: 0.4,
+      height: 10,
+      depth: 0.4,
+      color: 'brown',
+      position: {
+        x: -4.5,
+        y: -2,
+        z: -25.5
+      }
+    })
+    scene.add(finish3)
+    const finish4 = new Box({
+      width: 10,
+      height: 2,
+      depth: 1,
+      color: 'lime',
+      position: {
+        x: 0,
+        y: 3,
+        z: -25.5
+      }
+    })
+    finish4.castShadow = true
+    
+    scene.add(finish4)
   
     ground.receiveShadow = true
     scene.add(ground)
@@ -372,6 +432,50 @@
         ) {
           cancelAnimationFrame(animationId)
           document.getElementById("deathscreen").showModal();
+          document.exitPointerLock();
+          stop();
+        }
+        if (
+          boxCollision({
+            box1: cube,
+            box2: finish1
+          })
+        ) {
+          cancelAnimationFrame(animationId)
+          document.getElementById("winscreen").showModal();
+          document.exitPointerLock();
+          stop();
+        }
+        if (
+          boxCollision({
+            box1: cube,
+            box2: finish2
+          })
+        ) {
+          cancelAnimationFrame(animationId)
+          document.getElementById("winscreen").showModal();
+          document.exitPointerLock();
+          stop();
+        }
+        if (
+          boxCollision({
+            box1: cube,
+            box2: finish3
+          })
+        ) {
+          cancelAnimationFrame(animationId)
+          document.getElementById("winscreen").showModal();
+          document.exitPointerLock();
+          stop();
+        }
+        if (
+          boxCollision({
+            box1: cube,
+            box2: finish4
+          })
+        ) {
+          cancelAnimationFrame(animationId)
+          document.getElementById("winscreen").showModal();
           document.exitPointerLock();
           stop();
         }
