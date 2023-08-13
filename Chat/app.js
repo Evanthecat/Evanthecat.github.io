@@ -1,6 +1,3 @@
-// Initialize WebSocket connection
-const socket = new WebSocket("ws://your-websocket-server-url");
-
 // DOM elements
 const chatBox = document.getElementById("chat-box");
 const messageInput = document.getElementById("message-input");
@@ -59,24 +56,24 @@ function renderChatBox() {
 
 // Function to format a message or file for display
 function formatMessage(content) {
-  if (typeof content === "string") {
-      // Replace newline characters with <br> tags
-      return content.replace(/\n/g, "<br>");
-  } else {
-      if (content.type && content.type.startsWith("image")) {
-          return `<img src="${content.url}" class="image-preview">`;
-      } else {
-          return `
-              <div class="file-info">${content.name}</div>
-              <a href="${content.url}" download="${content.name}" class="download-button">Download</a>
-          `;
-      }
-  }
+    if (typeof content === "string") {
+        // Replace newline characters with <br> tags
+        return content.replace(/\n/g, "<br>");
+    } else {
+        if (content.type && content.type.startsWith("image")) {
+            return `<img src="${content.url}" class="image-preview">`;
+        } else {
+            return `
+                <div class="file-info">${content.name}</div>
+                <a href="${content.url}" download="${content.name}" class="download-button">Download</a>
+            `;
+        }
+    }
 }
 
 // Function to send a message
 function sendMessage(message) {
-    socket.send(message);
+    // Replace this line with actual WebSocket sending logic
     appendMessageOrFile(message, "You", new Date(), true);
 }
 
@@ -89,12 +86,6 @@ sendButton.addEventListener("click", () => {
         sendMessage(message);
         messageInput.value = "";
     }
-});
-
-// Event listener for WebSocket messages
-socket.addEventListener("message", (event) => {
-    const message = event.data;
-    appendMessageOrFile(message, "Friend", new Date(), false);
 });
 
 // Event listener for message input Enter key
@@ -126,7 +117,7 @@ fileInput.addEventListener("change", (event) => {
                 name: file.name,
                 type: file.type,
             };
-            socket.send(JSON.stringify(fileContent));
+            // Replace this line with actual WebSocket sending logic
             appendMessageOrFile(fileContent, "You", new Date(), true);
         };
         reader.readAsDataURL(file);
