@@ -84,9 +84,9 @@
     height: 9.8vw;
     background-color: #000;
     cursor: pointer;
-    position: absolute;
+    position: relative;
     left: 37.7%;
-    top:35vh;
+    top:20vh;
     transition: all 0.5s;
     transform: scale(1)
 }
