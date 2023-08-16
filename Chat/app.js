@@ -70,10 +70,15 @@ function appendMessageOrFile(content, sender, timestamp, isOwnMessage) {
         messageGroups[messageKey] = {
             sender,
             messages: [],
+            timestamp, // Add timestamp to the message group
         };
     }
 
-    messageGroups[messageKey].messages.push(content);
+    messageGroups[messageKey].messages.push({
+        content,
+        isOwnMessage,
+        timestamp,
+    });
 
     renderChatBox();
 }
@@ -82,7 +87,14 @@ function appendMessageOrFile(content, sender, timestamp, isOwnMessage) {
 function renderChatBox() {
     chatBox.innerHTML = ""; // Clear the chat box
 
-    for (const messageKey in messageGroups) {
+    // Sort message groups by timestamp before rendering
+    const sortedMessageKeys = Object.keys(messageGroups).sort((a, b) => {
+        const timestampA = messageGroups[a].timestamp;
+        const timestampB = messageGroups[b].timestamp;
+        return timestampA - timestampB;
+    });
+
+    for (const messageKey of sortedMessageKeys) {
         const group = messageGroups[messageKey];
 
         const messageElement = document.createElement("div");
@@ -91,7 +103,9 @@ function renderChatBox() {
             group.sender === "You" ? "own-message" : "friend-message"
         );
 
-        const messages = group.messages.map(formatMessage).join("<br>");
+        const messages = group.messages
+            .map((message) => formatMessage(message.content))
+            .join("<br>");
         messageElement.innerHTML = `
             <div class="message-info">${group.sender} - ${messageKey}</div>
             <div class="message-text">${messages}</div>
