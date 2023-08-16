@@ -62,3 +62,37 @@
     box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
     transform: scale(1.01)
 }
+#rpgbutton {
+    width: 24.5vw;
+    height: 9.8vw;
+    background-color: #000;
+    cursor: pointer;
+    position: absolute;
+    left: 37.7%;
+    top:35vh;
+    transition: all 0.5s;
+    transform: scale(1)
+}
+#rpgbutton:hover {
+    width: 25vw;
+    height: 10vw;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+    transform: scale(1.01)
+}
+#chatbutton {
+    width: 24.5vw;
+    height: 9.8vw;
+    background-color: #000;
+    cursor: pointer;
+    position: absolute;
+    left: 37.7%;
+    top:35vh;
+    transition: all 0.5s;
+    transform: scale(1)
+}
+#chatbutton:hover {
+    width: 25vw;
+    height: 10vw;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+    transform: scale(1.01)
+}
